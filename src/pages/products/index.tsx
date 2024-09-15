@@ -1,4 +1,3 @@
-import Showcase from '@/components/common/Showcase';
 import Header from '@/components/layout/Header';
 import { NextPageWithLayout } from '@/pages/_app';
 import { GetServerSidePropsContext } from 'next';
@@ -25,17 +24,16 @@ const Products: NextPageWithLayout<Props> = ({ products }) => {
   );
 };
 
-Products.getLayout = function getLayout(page: ReactElement) {
+Products.getLayout = (page: ReactElement) => {
   return (
     <>
       <Head>
         <title>Marketplace</title>
       </Head>
-      <Stack className="vh-100">
+      <Stack>
         <Header />
-        <Showcase />
+        {page}
       </Stack>
-      {page}
     </>
   );
 };

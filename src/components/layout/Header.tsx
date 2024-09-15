@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <Navbar expand="md" className="bg-light py-4 px-2">
         <Container>
-          <Navbar.Brand href="#home">Community</Navbar.Brand>
+          <Navbar.Brand href="/">Community</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-links" />
           <Navbar.Collapse id="navbar-links">
             <Nav className="me-auto">
