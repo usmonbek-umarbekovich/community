@@ -1,7 +1,10 @@
+import Showcase from '@/components/common/Showcase';
+import Header from '@/components/layout/Header';
 import { NextPageWithLayout } from '@/pages/_app';
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { type ReactElement } from 'react';
+import { Stack } from 'react-bootstrap';
 
 type Props = {
   products: any[];
@@ -9,7 +12,7 @@ type Props = {
 
 const Products: NextPageWithLayout<Props> = ({ products }) => {
   return (
-    <div>
+    <>
       <h1>Products</h1>
       <ul>
         {products.map(product => (
@@ -18,7 +21,7 @@ const Products: NextPageWithLayout<Props> = ({ products }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
@@ -28,6 +31,10 @@ Products.getLayout = function getLayout(page: ReactElement) {
       <Head>
         <title>Marketplace</title>
       </Head>
+      <Stack className="vh-100">
+        <Header />
+        <Showcase />
+      </Stack>
       {page}
     </>
   );
